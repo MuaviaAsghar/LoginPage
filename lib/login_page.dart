@@ -35,27 +35,34 @@ class _LoginpageState extends State<Loginpage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
+                  
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    labelStyle: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 0.0,
+      horizontal: 0.0,),
+                    prefixIcon: const Icon(Icons.email_sharp
+                    ,color: customgreen,
+                    ),
+                    
+                    // labelStyle: const TextStyle(
+                    //     fontSize: 16, fontWeight: FontWeight.bold),
                     hintStyle: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
-                    labelText: "Username",
+                        fontSize: 16, fontWeight: FontWeight.w500),
+                    // labelText: "Email",
                     hintText: 'Enter an email',
                     focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
                         width: 3,
                         color: customgreen,
                       ),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(60),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
                         width: 3,
                         color: customgreen,
                       ),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(60),
                     ),
                   ),
                 ),
@@ -63,48 +70,35 @@ class _LoginpageState extends State<Loginpage> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 25),
                 child: TextField(
+                  
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
-                    labelStyle: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.bold),
+                    
+                    prefixIcon:const Icon(Icons.password_sharp,color:customgreen),
+                    // labelStyle: const TextStyle(
+                        // fontSize: 17, fontWeight: FontWeight.bold),
                     hintStyle: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.bold),
-                    labelText: "Password",
+                        fontSize: 17, fontWeight: FontWeight.w500),
+                    // labelText: "Password",
                     hintText: 'Enter a password',
                     focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
                         width: 3,
                         color: customgreen,
                       ),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(60),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
                         width: 3,
                         color: customgreen,
                       ),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(60),
                     ),
                   ),
                 ),
               ),
-              // Remember Me checkbox
-              // CheckboxListTile(
-              //   title: const Text(
-              //     "Remember Me",
-              //   ),
-              //   value: checkedValue,
-              //   onChanged: (newValue) {
-              //     FocusManager.instance.primaryFocus?.unfocus();
-              //     setState(() {
-              //       checkedValue = newValue!;
-              //     });
-              //   },
-              //   contentPadding: const EdgeInsets.only(left: 15, right: 15, top: 0),
-              //   controlAffinity: ListTileControlAffinity.leading,
-              // ),
-              // Forget Password button
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 10),
                 child: Row(
@@ -147,6 +141,32 @@ class _LoginpageState extends State<Loginpage> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: customgreen,
+                    minimumSize: const Size(400, 55),
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    textStyle: const TextStyle(
+                      fontFamily: 'Siro',
+                      color: customgreen,
+                      fontSize: 25,
+                    ),
+                  ),
+                  child: const Text(
+                    'Signup',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Siro',
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -154,125 +174,3 @@ class _LoginpageState extends State<Loginpage> {
     );
   }
 }
-
-
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({super.key});
-
-// @override
-// Widget build(BuildContext context) {
-//   bool checkedValue = false; // Initialize the checkedValue for the checkbox
-  
-//   return Scaffold(
-//     appBar: AppBar(
-//       centerTitle: true,
-//       title: const Text(
-//         "Sign In",
-//         style: TextStyle(fontFamily: 'Siro', fontSize: 30),
-//       ),
-//       toolbarHeight: 100,
-//       backgroundColor: customgreen,
-//       shape: const RoundedRectangleBorder(
-//           borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
-//     ),
-//     body: Padding(
-//       padding: const EdgeInsets.only(top: 100),
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.start,
-//         // crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Padding(
-//             padding: const EdgeInsets.symmetric(horizontal: 15),
-//             child: TextField(
-//               keyboardType: TextInputType.emailAddress,
-//               decoration: InputDecoration(
-//                 labelStyle: const TextStyle(
-//                     fontSize: 16, fontWeight: FontWeight.bold),
-//                 hintStyle: const TextStyle(
-//                     fontSize: 16, fontWeight: FontWeight.bold),
-//                 labelText: "Username",
-//                 hintText: 'Enter an email',
-//                 focusedBorder: OutlineInputBorder(
-//                   borderSide: const BorderSide(
-//                     width: 3,
-//                     color: customgreen,
-//                   ),
-//                   borderRadius: BorderRadius.circular(10.0),
-//                 ),
-//                 enabledBorder: OutlineInputBorder(
-//                   borderSide: const BorderSide(
-//                     width: 3,
-//                     color: customgreen,
-//                   ),
-//                   borderRadius: BorderRadius.circular(10.0),
-//                 ),
-//               ),
-//             ),
-//           ),
-//           Padding(
-//             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-//             child: TextField(
-//               obscureText: true,
-//               keyboardType: TextInputType.visiblePassword,
-//               decoration: InputDecoration(
-//                 labelStyle: const TextStyle(
-//                     fontSize: 17, fontWeight: FontWeight.bold),
-//                 hintStyle: const TextStyle(
-//                     fontSize: 17, fontWeight: FontWeight.bold),
-//                 labelText: "Password",
-//                 hintText: 'Enter a password',
-//                 focusedBorder: OutlineInputBorder(
-//                   borderSide: const BorderSide(
-//                     width: 3,
-//                     color: customgreen,
-//                   ),
-//                   borderRadius: BorderRadius.circular(10.0),
-//                 ),
-//                 enabledBorder: OutlineInputBorder(
-//                   borderSide: const BorderSide(
-//                     width: 3,
-//                     color: customgreen,
-//                   ),
-//                   borderRadius: BorderRadius.circular(10.0),
-//                 ),
-//               ),
-//             ),
-//           ),
-//           // Remember Me checkbox
-//           CheckboxListTile(
-//             title: const Text(
-//               "Remember Me",
-              
-//             ),
-//             value: checkedValue,
-//             onChanged: (newValue) {
-//               FocusManager.instance.primaryFocus?.unfocus();
-//               setState(() {
-//                 checkedValue = newValue!;
-//               });
-//             },
-//             contentPadding: EdgeInsets.only(left: 15, right: 15, top: 0),
-//             controlAffinity: ListTileControlAffinity.leading,
-//           ),
-//           // Forget Password button
-//           Row(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               TextButton(
-//                 child: Text(
-//                   "Forget Password",
-                  
-//                 ),
-//                 onPressed: () {
-//                   // Handle the onPressed event
-//                 },
-//               )
-//             ],
-//           ),
-//         ],
-//       ),
-//     ),
-//   );
-// }
-
-
