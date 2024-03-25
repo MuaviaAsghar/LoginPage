@@ -27,7 +27,7 @@ class _LoginpageState extends State<Loginpage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 110),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             // crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,10 +36,9 @@ class _LoginpageState extends State<Loginpage> {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
                   
-                  keyboardType: TextInputType.emailAddress,
+                  // keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 0.0,
-      horizontal: 0.0,),
+      //              
                     prefixIcon: const Icon(Icons.email_sharp
                     ,color: customgreen,
                     ),
@@ -68,7 +67,7 @@ class _LoginpageState extends State<Loginpage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 25),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 18),
                 child: TextField(
                   
                   obscureText: true,
@@ -79,7 +78,8 @@ class _LoginpageState extends State<Loginpage> {
                     // labelStyle: const TextStyle(
                         // fontSize: 17, fontWeight: FontWeight.bold),
                     hintStyle: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.w500),
+                        fontSize: 16, 
+                        fontWeight: FontWeight.w500),
                     // labelText: "Password",
                     hintText: 'Enter a password',
                     focusedBorder: OutlineInputBorder(
@@ -128,7 +128,10 @@ class _LoginpageState extends State<Loginpage> {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {
+                      onPressed: (
+                         
+                      ) {
+                        showImageAlertDialog(context);
                         // Handle "Forgot Password" button press
                       },
                       child: const Text(
@@ -167,10 +170,60 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ),
+              const Padding(
+                padding: EdgeInsets.only(top: 110),
+                child: Text("Don't have a account?"),
+              ),
+              
+              TextButton(onPressed: (){
+
+              }, child: const Padding(
+                padding: EdgeInsets.only(top:0,bottom: 40),
+                child: Text("SIGN UP NOW",style: TextStyle(color: customgreen),),
+              ))
+              
             ],
+            
           ),
+          
         ),
+        
       ),
+      
     );
   }
 }
+
+
+
+
+  void showImageAlertDialog(BuildContext context) { 
+    showDialog( 
+      context: context, 
+      builder: (BuildContext context) { 
+        return AlertDialog( 
+          title: const Text('Image Alert Dialog'), 
+          content: Column( 
+            mainAxisSize: MainAxisSize.min, 
+            children: <Widget>[ 
+              Image.asset( 
+                'assets/images/Almonds.png', // Replace with your image path 
+                width: 250,
+                height: 100, // Adjust image width as needed 
+              ), 
+              const SizedBox(height: 20), // Adjust spacing as needed 
+            
+            ], 
+          ), 
+          actions: <Widget>[ 
+            ElevatedButton( 
+              onPressed: () { 
+                Navigator.of(context).pop(); // Close the AlertDialog 
+              }, 
+              child: const Text('Close'), 
+            ), 
+          ], 
+        ); 
+      }, 
+    ); 
+  } 
